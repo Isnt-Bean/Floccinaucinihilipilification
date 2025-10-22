@@ -1,6 +1,6 @@
 # Floccinaucinihilipilification
 
-Programmer/Designer: Alexander Bean - 100927087
+Programmer/Designer: Alexander Bean - 100927087 (Working Solo)
 
 
 ## PROTOTYPING:
@@ -10,7 +10,7 @@ Programmer/Designer: Alexander Bean - 100927087
 4. Command: Used for dialog progression/undoing dialog progression
 5. Plugin/DLL: Used to write the dialog the NPC's will read from
 
-## External assets used: 
+## External Assets Used: 
 https://assetstore.unity.com/packages/2d/textures-materials/nature/yughues-free-ground-materials-13001 
 https://assetstore.unity.com/packages/2d/textures-materials/concrete/yughues-free-concrete-materials-12951
 https://assetstore.unity.com/packages/2d/textures-materials/wood/yughues-free-wooden-floor-materials-13213
