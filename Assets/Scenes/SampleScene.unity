@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 54519940}
   - component: {fileID: 54519939}
   - component: {fileID: 54519938}
+  - component: {fileID: 54519942}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -233,6 +234,19 @@ Transform:
   - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &54519942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54519937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d698748ec87201242a85481d0c6fb29f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
+  TextDialogBox: {fileID: 0}
 --- !u!1 &180889112
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +415,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 09a5c4bdc5750fc4197d54f53b0bd0d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
