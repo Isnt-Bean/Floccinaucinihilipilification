@@ -10,7 +10,7 @@ Observer: Determining when the player walks into a new area
 Command: Used for dialog progression/undoing dialog progression
 
 
-external assets used:
+external assets used: n\
 https://assetstore.unity.com/packages/2d/textures-materials/nature/yughues-free-ground-materials-13001 
 https://assetstore.unity.com/packages/2d/textures-materials/concrete/yughues-free-concrete-materials-12951
 https://assetstore.unity.com/packages/2d/textures-materials/wood/yughues-free-wooden-floor-materials-13213
