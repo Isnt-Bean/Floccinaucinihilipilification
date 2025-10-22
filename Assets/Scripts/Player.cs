@@ -4,12 +4,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject TextDialogBox;
+    public GameObject DialogPrompt;
+    public bool istalking = false;
     private float speed = 5f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         TextDialogBox.SetActive(false);
+        DialogPrompt.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,12 +28,27 @@ public class Player : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    private void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("NPC") && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
+            DialogPrompt.SetActive(false);
+            istalking = true;
             TextDialogBox.SetActive(true);
-            //read the specific NPC's dialog
         }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("NPC"))
+        {
+            DialogPrompt.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        DialogPrompt.SetActive(false);
     }
 }
