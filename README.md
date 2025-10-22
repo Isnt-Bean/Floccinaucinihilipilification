@@ -4,13 +4,14 @@ Programmer/Designer: Alexander Bean - 100927087
 
 
 PROTOTYPING:
+
 Singleton: Creating the player and game manager (if more comes to mind I will add it here)
 Factory: Creating the interacable NPC's around the playable area
 Observer: Determining when the player walks into a new area
 Command: Used for dialog progression/undoing dialog progression
 
 
-external assets used: 
+External assets used: 
 
 https://assetstore.unity.com/packages/2d/textures-materials/nature/yughues-free-ground-materials-13001 
 https://assetstore.unity.com/packages/2d/textures-materials/concrete/yughues-free-concrete-materials-12951
