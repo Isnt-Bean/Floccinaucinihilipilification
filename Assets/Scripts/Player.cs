@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
-
+using System.Collections;
 public class Player : MonoBehaviour
 {
     public GameObject TextDialogBox;
     public GameObject DialogPrompt;
-    public bool istalking = false;
+    public bool isTalking = false;
     private float speed = 5f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,17 +26,23 @@ public class Player : MonoBehaviour
 
         // Apply movement
         transform.Translate(direction * speed * Time.deltaTime);
+        if (isTalking == false)
+        {
+            StopCoroutine(Wait());
+        }
+        
     }
 
     void OnTriggerStay(Collider other)
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            speed = 0f;
             DialogPrompt.SetActive(false);
-            istalking = true;
+            isTalking = true;
             TextDialogBox.SetActive(true);
+            StartCoroutine(Wait());
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,5 +56,14 @@ public class Player : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         DialogPrompt.SetActive(false);
+    }
+    
+    
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(5f);
+        isTalking = false;
+        TextDialogBox.SetActive(false);
+        speed = 5f;
     }
 }

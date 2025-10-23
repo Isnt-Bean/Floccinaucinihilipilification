@@ -1967,6 +1967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReadDialog
   dialog: {fileID: 4900000, guid: 60ad28e448443da45b1fa043010f5678, type: 3}
+  text: {fileID: 936079433}
 --- !u!4 &1706010109
 Transform:
   m_ObjectHideFlags: 0
