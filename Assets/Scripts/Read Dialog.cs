@@ -13,13 +13,8 @@ public class ReadDialog : MonoBehaviour
         string dialogInfo = dialog.text;
         text.text = dialogInfo;
         //print(dialogInfo);
-        //use command to be able to activate dialog and undo dialog progession
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
+        
+        //use command to be able to activate dialog and undo dialog progression
     }
-
 }

@@ -3,12 +3,12 @@ using UnityEngine;
 using System.Collections;
 public class Player : MonoBehaviour
 {
+    public NPC npc;
     public GameObject TextDialogBox;
     public GameObject DialogPrompt;
     public bool isTalking = false;
     private float speed = 5f;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         TextDialogBox.SetActive(false);
@@ -57,6 +57,12 @@ public class Player : MonoBehaviour
     {
         DialogPrompt.SetActive(false);
     }
+    
+    
+    /*
+     USE DIRTY FLAG TO LOAD INDIVIDUAL PARTS OF A LEVEL AT A TIME (optimization)
+     */
+    
     
     
     IEnumerator Wait()
