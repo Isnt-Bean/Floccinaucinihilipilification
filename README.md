@@ -4,11 +4,10 @@ Programmer/Designer: Alexander Bean - 100927087 (Working Solo)
 
 
 ## PROTOTYPING:
-1. Singleton: Creating the player and game manager (if more comes to mind I will add it here)
-2. Factory: Creating the interacable NPC's around the playable area
-3. Observer: Determining when the player walks into a new area
-4. Command: Used for dialog progression/undoing dialog progression
-5. Plugin/DLL: Used to write the dialog the NPC's will read from
+1. Singleton: Creating a camera fade to transition to different areas (from inside a home to outside)
+2. Dirty Flag: Loads objects that are within a certain distance to the player (optimization)
+3. Observer: Gets the NPC's dialog and displays it to the screen
+4. Plugin/DLL: Used to write the dialog the NPC's will read from
 
 ## Diagrams
 
