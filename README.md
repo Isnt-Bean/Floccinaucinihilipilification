@@ -9,8 +9,6 @@ Programmer/Designer: Alexander Bean - 100927087 (Working Solo)
 3. Observer: Gets the NPC's dialog and displays it to the screen
 4. Command: Used to go back to previous dialog
 
-## Diagrams
-
 ## Implementation Explaination
 
 Singleton: used for the camera fade. Prevents there from being multiple fades at a time, giving the transitions a smoother feeling
