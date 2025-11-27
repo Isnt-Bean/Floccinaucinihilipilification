@@ -8,13 +8,28 @@ Programmer/Designer: Alexander Bean - 100927087 (Working Solo)
 2. Dirty Flag: Loads objects that are within a certain distance to the player (optimization)
 3. Observer: Gets the NPC's dialog and displays it to the screen
 4. Plugin/DLL: Used to write the dialog the NPC's will read from
+5. Command: Used to go back to previous dialog
 
 ## Diagrams
 
 ## Implementation Explaination
 
+Singleton: used for the camera fade. Prevents there from being multiple fades at a time, giving the transitions a smoother feeling
+Dirty Flag: used for loading certain parts of the play area at a time. Helps with performance
+Observer: used for the NPC's dialog logic. Keeps the NPC script clearer for other classes
+Command: used to keep track of the dialog the player has gone through with the current NPC. allows them to go back to previous dialog
+
 ## External Assets Used/to be used: 
+
+Used
+
 - [Playermovement](https://github.com/alvarojuq/ExamStarterUnity/blob/main/Assets/Scripts/Movement.cs)
+- https://assetstore.unity.com/packages/3d/props/exterior/urban-building-130318
+- https://assetstore.unity.com/packages/3d/props/basic-bedroom-starterpack-215986
+- https://assetstore.unity.com/packages/3d/props/interior/hotel-room-collection-214335
+
+To be used
+
 - https://assetstore.unity.com/packages/2d/textures-materials/nature/yughues-free-ground-materials-13001 
 - https://assetstore.unity.com/packages/2d/textures-materials/concrete/yughues-free-concrete-materials-12951
 - https://assetstore.unity.com/packages/2d/textures-materials/wood/yughues-free-wooden-floor-materials-13213
