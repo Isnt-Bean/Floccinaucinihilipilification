@@ -11,6 +11,9 @@ Programmer/Designer: Alexander Bean - 100927087 (Working Solo)
 
 ## Diagrams
 
+dirty flag
+observer
+
 
 ## Implementation Explaination
 
