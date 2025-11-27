@@ -8,7 +8,7 @@ public class DirtyFlagCheck : MonoBehaviour
 
     public bool IsLoaded { get; private set; } = false;
     public bool IsDirty { get; private set; } = false;
-            
+
     void Awake()
     {
         Clean();

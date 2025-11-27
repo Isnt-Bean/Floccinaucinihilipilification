@@ -6,6 +6,10 @@ public class DirtyFlag : MonoBehaviour
     public Player player;
     public DirtyFlagCheck[] check;
 
+    void Start()
+    {
+        check = FindObjectsOfType<DirtyFlagCheck>();
+    }
     private void Update()
     {
         foreach (DirtyFlagCheck checkIfDirty in check)
