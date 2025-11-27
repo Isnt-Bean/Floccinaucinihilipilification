@@ -11,8 +11,12 @@ Programmer/Designer: Alexander Bean - 100927087 (Working Solo)
 
 ## Diagrams
 
-dirty flag
-observer
+<img width="628" height="641" alt="Dirty Flag drawio" src="https://github.com/user-attachments/assets/a373a35f-a3d4-4544-970b-cfda3ad06d88" />
+Dirty Flag
+
+
+<img width="501" height="461" alt="Observer drawio" src="https://github.com/user-attachments/assets/9d99f6ea-6f40-4a05-a4cc-040d45ed1c42" />
+Observer
 
 
 ## Implementation Explaination
