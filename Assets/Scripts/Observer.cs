@@ -8,6 +8,27 @@ public class Observer : MonoBehaviour
     public TextMeshProUGUI text;
     public string npcText;
 
+    void Update()
+    {
+
+        npcText = npc.newText[npc.i];
+        
+        OnNPCSpeak();
+    }
+    
+    //these need to be in command
+    public void Deincrement()
+    {
+        ICommand storedCommand = new Commands(npc);
+        storedCommand.Undo();
+    }
+
+    public void Increment()
+    {        
+        ICommand storedCommand = new Commands(npc);
+        storedCommand.Execute();
+  
+    }
     private void OnNPCSpeak()
     {
         text.text = npcText;

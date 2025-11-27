@@ -1,19 +1,42 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class NPC : MonoBehaviour
 {
     public event Action EnteredSpace;
     public event Action DialogEmpty;
     public Observer o;
-    public String newText;
-    public TextAsset dialog;
+    public String[] newText;
 
+    public String talkedToMessage;
+
+    public Player p;
+    //public TextAsset dialog;
+
+    public int i = 0;
+
+
+    public void Deincrement()
+    {
+        if (i > 0)
+        {
+            i--;
+        }
+    }
+
+    public void Increment()
+    {
+        if (i < newText.Length - 1)
+        {
+            i++;
+        }
+    }
     
     private void Start()
     {
-        string dialogInfo = dialog.text;
-        newText = dialog.text;
+        //string dialogInfo = dialog.text;
+        //newText = dialog.text;
         BlankText();
     }
     private void TalkToPlayer()
@@ -26,12 +49,19 @@ public class NPC : MonoBehaviour
         DialogEmpty?.Invoke();
     }
 
+    void Update()
+    {
+        if (i == newText.Length - 1)
+        {
+            p.StartCoroutine(p.Wait());
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            o.npcText = newText[i];
             //print("Player Entered");
-            o.npcText = newText;
             TalkToPlayer();
         }
     }
@@ -41,8 +71,9 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //print("Player Exited");
-            newText = "Why are you still talking to me?";
+            talkedToMessage = "Why are you still talking to me?";
             BlankText();
         }
     }
+    
 }

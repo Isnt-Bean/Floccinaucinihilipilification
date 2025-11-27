@@ -5,6 +5,7 @@ public class Singleton : MonoBehaviour
 {
     public static Singleton Instance { get; private set; }
     public CameraFade cf;
+    public GameObject fade;
     public bool isTP = false;
     void Awake()
     {
@@ -22,15 +23,12 @@ public class Singleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var temp = cf.fade.GetComponent<Image>().color;
+        var temp = fade.GetComponent<Image>().color;
         if (temp.a >= 1.99f && isTP == false)
         {
             StartCoroutine(wait());
             isTP = true;
-            print("Player Teleports");
         }
-        //get the camera fade script, detect when the screen fades to black, then move the player before the fade goes away
-        
     }
 
     IEnumerator wait()

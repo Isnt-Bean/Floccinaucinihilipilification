@@ -1,18 +1,26 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
-    public NPC npc;
+    public CameraFade cF;
     public GameObject TextDialogBox;
     public GameObject DialogPrompt;
-    public bool isTalking = false;
+    public GameObject TeleportPrompt;
+    public Observer o;
+    public NPC npc;
+    private bool isTalking = false;
+    private bool canTalk = false;
+    private bool canTP = false;
     private float speed = 5f;
+    private string tpText;
     
     void Start()
     {
         TextDialogBox.SetActive(false);
         DialogPrompt.SetActive(false);
+        TeleportPrompt.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,22 +34,26 @@ public class Player : MonoBehaviour
 
         // Apply movement
         transform.Translate(direction * speed * Time.deltaTime);
+        
         if (isTalking == false)
         {
             StopCoroutine(Wait());
         }
-        
-    }
 
-    void OnTriggerStay(Collider other)
-    {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (canTP && Input.GetKeyDown(KeyCode.E))
+        {
+            TeleportPrompt.SetActive(true);
+            cF.StartFadeIn = true;
+            StartCoroutine(ChangeScene());
+        }
+
+        if (canTalk && Input.GetKeyDown(KeyCode.E))
         {
             speed = 0f;
             DialogPrompt.SetActive(false);
             isTalking = true;
             TextDialogBox.SetActive(true);
-            StartCoroutine(Wait());
+            //StartCoroutine(Wait());
         }
     }
 
@@ -50,26 +62,50 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("NPC"))
         {
             DialogPrompt.SetActive(true);
+            canTalk = true;
+        }
+
+        if (other.gameObject.CompareTag("Teleport"))
+        {
+            canTP = true;
+            TeleportPrompt.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         DialogPrompt.SetActive(false);
+        TeleportPrompt.SetActive(false);
+        canTalk = false;
+        canTP = false;
     }
     
     
     /*
-     USE DIRTY FLAG TO LOAD INDIVIDUAL PARTS OF A LEVEL AT A TIME (optimization)
+     IDEAS: 
+     - Police accident scene somewhere
+     - End Game Condition is falling asleep and waking up again
+     
+     TODO:
+     - add more NPC's with dialog
+     - add a counter for end game condition
+   
      */
     
     
     
-    IEnumerator Wait()
+    public IEnumerator Wait()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
+        npc.i = 0;
         isTalking = false;
         TextDialogBox.SetActive(false);
         speed = 5f;
+    }
+
+    IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

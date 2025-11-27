@@ -5,12 +5,15 @@ using System.Collections;
 public class ReadDialog : MonoBehaviour
 {
 //THIS SCRIPT WILL BE TURNED INTO A COMMAND FUNCTION IN THE FUTURE, FOR NOW IT'S TO DEMONSTRATE THE FUNCTIONS OF THE GAME//
-    public TextAsset dialog;
+    public TextAsset[] dialog;
     public TextMeshProUGUI text;
+
+    public int i = 0;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        string dialogInfo = dialog.text;
+        string dialogInfo = dialog[i].text;
         text.text = dialogInfo;
         //print(dialogInfo);
         
