@@ -22,18 +22,17 @@ Dirty Flag: used for loading certain parts of the play area at a time. Helps wit
 Observer: used for the NPC's dialog logic. Keeps the NPC script clearer for other classes
 Command: used to keep track of the dialog the player has gone through with the current NPC. allows them to go back to previous dialog
 
-## External Assets Used/to be used: 
-
-Used
+## External Assets Used: 
 
 - [Playermovement](https://github.com/alvarojuq/ExamStarterUnity/blob/main/Assets/Scripts/Movement.cs)
 - https://assetstore.unity.com/packages/3d/props/exterior/urban-building-130318
 - https://assetstore.unity.com/packages/3d/props/basic-bedroom-starterpack-215986
 - https://assetstore.unity.com/packages/3d/props/interior/hotel-room-collection-214335
-
-To be used
-
+- https://assetstore.unity.com/packages/3d/environments/urban/vrbn-studios-free-buildings-urp-bundle-001-264015
 - https://assetstore.unity.com/packages/2d/textures-materials/nature/yughues-free-ground-materials-13001 
-- https://assetstore.unity.com/packages/2d/textures-materials/concrete/yughues-free-concrete-materials-12951
-- https://assetstore.unity.com/packages/2d/textures-materials/wood/yughues-free-wooden-floor-materials-13213
-- https://assetstore.unity.com/packages/2d/textures-materials/water/simple-water-shader-hdrp-207454
+
+## Reference Scripts
+
+learn.unity.com/tutorial/use-the-command-pattern-for-flexible-and-extensible-game-systems?uv=6&projectId=67bc8deaedbc2a23a7389cab# 
+https://learn.unity.com/tutorial/dirty-flag-pattern
+
