@@ -55,6 +55,11 @@ public class Player : MonoBehaviour
             TextDialogBox.SetActive(true);
             //StartCoroutine(Wait());
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -85,18 +90,13 @@ public class Player : MonoBehaviour
      IDEAS: 
      - Police accident scene somewhere
      - End Game Condition is falling asleep and waking up again
-     
-     TODO:
-     - add more NPC's with dialog
-     - add a counter for end game condition
-   
      */
     
     
     
     public IEnumerator Wait()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         npc.i = 0;
         isTalking = false;
         TextDialogBox.SetActive(false);

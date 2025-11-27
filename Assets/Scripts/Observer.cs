@@ -10,7 +10,6 @@ public class Observer : MonoBehaviour
 
     void Update()
     {
-
         npcText = npc.newText[npc.i];
         
         OnNPCSpeak();

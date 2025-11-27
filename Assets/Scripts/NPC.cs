@@ -9,7 +9,7 @@ public class NPC : MonoBehaviour
     public Observer o;
     public String[] newText;
 
-    public String talkedToMessage;
+    public int talkedToNum = 0;
 
     public Player p;
     //public TextAsset dialog;
@@ -70,8 +70,6 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //print("Player Exited");
-            talkedToMessage = "Why are you still talking to me?";
             BlankText();
         }
     }
