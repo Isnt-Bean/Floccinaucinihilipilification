@@ -7,8 +7,7 @@ Programmer/Designer: Alexander Bean - 100927087 (Working Solo)
 1. Singleton: Creating a camera fade to transition to different areas (from inside a home to outside)
 2. Dirty Flag: Loads objects that are within a certain distance to the player (optimization)
 3. Observer: Gets the NPC's dialog and displays it to the screen
-4. Plugin/DLL: Used to write the dialog the NPC's will read from
-5. Command: Used to go back to previous dialog
+4. Command: Used to go back to previous dialog
 
 ## Diagrams
 
